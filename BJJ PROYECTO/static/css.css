@@ -1,0 +1,261 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+:root{
+    --color-principal: #3d5ba0;
+    --color-secundario: #fff;
+}
+
+body{
+    box-sizing: border-box;
+}
+
+#portada{
+    width: 100%;
+    height: auto;
+}
+
+#barrasuperior{
+    background-color: var(--color-principal);
+    padding: 10px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+}
+
+nav ul{
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+nav ul li{
+    display: inline-block;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: var(--color-secundario);
+    font-weight: 600;
+    padding: 15px 10px;
+    transition: all 0.5s;
+}
+
+nav ul li a:hover{
+    background-color:coral;
+    color: white;
+}
+#barrasuperior img{
+    width: 100px; /* cambia el tamaño aquí */
+    height: auto;
+}
+
+.btn{
+    border: none;
+    padding: 10px;
+    margin: 10px 5px 30px 0;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-principal{
+    color: white;
+    background-color: var(--color-principal);
+}
+
+.btn-principal:hover{
+    color: var(--color-principal);
+    background-color: white;
+
+}
+
+/* Contenedor */
+#contenedor{
+    width: 100%;
+    height: 100vh;
+    padding: 0 10%;
+    box-sizing: border-box;
+    position: relative;
+}
+#contenedor h2{
+    color: white;
+    padding: 40px 0;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    font-size: 40px;
+}
+
+#contenedor p{
+    font-size: 25px;
+    margin: 30px 0;
+    color: white;
+    z-index: 2;
+    position: relative;
+    text-align: center;
+}
+
+#contenedor h3{
+    font-size: 40px;
+    
+}
+.R, .D, .F{
+    width: 460px;
+    padding: 45px;
+    border-radius: 10px;
+    text-align: center;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(6px);
+}
+.R:hover,
+.D:hover,
+.F:hover{
+    transform: translateY(-8px);
+    transition: 0.3s;
+}
+.R{
+    color: white;
+    grid-column: 1;
+}
+.D{
+    color: white;
+    grid-column: 2;
+}
+.F{
+    color: white;
+    grid-column: 1 / span 2;
+    justify-self: center;
+}
+
+.menu-opciones{
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    justify-items: center;
+    margin-top: 40px;
+}
+
+.R a button{
+    font-size: 30px;
+}
+
+.F a button{
+    font-size: 30px;
+}
+.D a button{
+    font-size: 30px;
+}
+
+.overlay{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-image: url("../static/cajas.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.overlay:before{
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.55);
+}
+
+
+/* Footer */
+footer{
+    background-color: #3d5ba0;
+    color: white;
+    text-align: center;
+}
+
+footer p{
+    font-weight: 700;
+    font-size: 16px;
+}
+
+/* Registrar Cliente */
+
+#Formulario{
+    width: 100%;
+    height: 100vh;
+    padding: 50px 10%;
+    box-sizing: border-box;
+    position: relative;
+    background-color: var(--color-secundario);
+}
+
+#Formulario p{
+    padding: 10px 10px;
+}
+
+#Formulario button{
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+
+#Formulario{
+    width: 100%;
+    height: 100vh;
+}
+
+#Formulario body{
+    display: flex;
+    flex-direction: column;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+}
+
+th, td{
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th{
+    background-color: #3d5ba0;
+    color: white;
+}
+
+tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+.alert{
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.error{
+    background-color: #ffdddd;
+    color: #a30000;
+}
+
+.success{
+    background-color: #ddffdd;
+    color: #006400;
+}
