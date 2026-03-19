@@ -46,7 +46,7 @@ def clientes():
     return render_template("clientes.html", clientes=datos)
 
 # 📝 REGISTRAR CLIENTE
-@app.route("/registrar-cliente")
+@app.route("/registrar_cliente")
 def registrar_cliente():
 
     cursor.execute("""
