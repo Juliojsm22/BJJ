@@ -2,7 +2,8 @@ from flask import Flask, render_template, request, redirect, url_for, flash, sen
 import mysql.connector
 from datetime import datetime
 import io
-
+import os
+import mysql.connector
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import letter
@@ -13,20 +14,29 @@ app.secret_key = "clave_secreta_bjj"
 
 # 🔌 CONEXIÓN MYSQL
 conexion = mysql.connector.connect(
-    host="autorack.proxy.rlwy.net",
-    port=14787,
-    user="root",
-    password="TDAsamrOUIXdcXGlThkvIUrDKPmdJhDx",  # cambia si tienes contraseña
-    database="railway",
+    host=os.getenv("DB_HOST", "autorack.proxy.rlwy.net"),
+    port=int(os.getenv("DB_PORT", 14787)),
+    user=os.getenv("DB_USER", "root"),
+    password=os.getenv("DB_PASS", "TDAsamrOUIXdcXGlThkvIUrDKPmdJhDx"),
+    database=os.getenv("DB_NAME", "railway"),
     ssl_disabled=False
 )
 
 cursor = conexion.cursor(dictionary=True)
 
+
+@app.route("/test_db")
+def test_db():
+    try:
+        cursor.execute("SELECT 1")
+        return "✅ Conexión a Railway exitosa"
+    except Exception as e:
+        return f"❌ Error al conectar: {e}"
+    
 # 🏠 INICIO
 @app.route("/")
 def index():
-    return render_template("Index.html")
+    return render_template("index.html")
 
 # 👥 CLIENTES
 @app.route("/clientes")
