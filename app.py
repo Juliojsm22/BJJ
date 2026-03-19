@@ -36,7 +36,7 @@ def test_db():
 # 🏠 INICIO
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("Index.html")
 
 # 👥 CLIENTES
 @app.route("/clientes")
