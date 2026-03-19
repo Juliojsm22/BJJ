@@ -13,10 +13,12 @@ app.secret_key = "clave_secreta_bjj"
 
 # 🔌 CONEXIÓN MYSQL
 conexion = mysql.connector.connect(
-    host="mysql.railway.internal",
+    host="autorack.proxy.rlwy.net",
+    port=14787,
     user="root",
     password="TDAsamrOUIXdcXGlThkvIUrDKPmdJhDx",  # cambia si tienes contraseña
-    database="railway"
+    database="railway",
+    ssl_disabled=False
 )
 
 cursor = conexion.cursor(dictionary=True)
